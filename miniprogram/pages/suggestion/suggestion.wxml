@@ -1,0 +1,15 @@
+<view class="cu-custom" style="height:{{CustomBar}}px;">
+  <view class="cu-bar fixed bg-gradual-blue" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <view class='content' style='top:{{StatusBar}}px;'>意见反馈</view>
+    <navigator class='action' open-type="navigateBack" delta="1" hover-class="none">
+      <view class='icon-back padding'></view>
+    </navigator>
+  </view>
+</view>
+
+<form bindsubmit='res'>
+  <view class=" margin" wx:hide="{{modalName==null}}">
+    <textarea placeholder="请输入您的反馈" name='suggestion' maxlength="-1" disabled="{{modalName!=null}}" placeholder-class='placeholder'></textarea>
+  </view>
+  <view><button class='bg-blue margin' form-type='submit'>提交</button></view>
+</form>

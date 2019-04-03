@@ -1,0 +1,38 @@
+<view class='cu-custom' style="height:{{CustomBar}}px;">
+  <view class="cu-bar fixed bg-gradual-blue" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <view class='content' style='top:{{StatusBar}}px;'>开源量化</view>
+  </view>
+</view>
+<view wx:for="{{achieveList}}" wx:key>
+<navigator hover-class='none' url="../article/article?id={{item.id}}" open-type="navigate">
+ <view class="cu-card case {{isCard?'no-card':''}}">
+  <view  class="cu-item shadow">
+  <view class='text-lg margin-xs text-bold'>{{item.title}}</view>
+    <view class='image'>
+      <image src="{{item.image}}" mode="aspectFill"></image>
+      <view class="cu-tag bg-blue">{{item.tag}}</view>
+      <view class='cu-bar bg-shadeBottom'>
+      <view class='text-sm'>分类：{{item.kind}}</view>
+      </view>
+    </view>
+    <view class="cu-list menu menu-avatar">
+      <view class="cu-item">
+        <view class="cu-avatar round lg" style="background-image:url({{item.avatarurl}});"></view>
+        <view class='content flex-sub'>
+          <view class='text-grey text'>{{item.nickname}}</view>
+          <view class='text-gray text-sm flex justify-between'>
+            {{item.date}}
+            <view class="text-gray">
+              <text class="icon-appreciatefill"></text> {{item.appreciate}}
+              <text class="icon-messagefill"></text> {{item.message}}
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+</navigator>
+</view>
+<view class='cu-tabbar-height'></view>

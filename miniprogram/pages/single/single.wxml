@@ -1,0 +1,47 @@
+<view class='cu-custom' style="height:{{CustomBar}}px">
+  <view class="cu-bar fixed bg-gradual-blue" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <view class='content' style='top:{{StatusBar}}px;'>开源量化</view>
+  </view>
+</view>
+
+
+
+    <view class="list">
+      <view class="list-item">
+        <text class="black">一、量化研究方法论</text>
+        <view class='text-gray' bindtap='clickMe1'>{{hiddenName1?'展开':'收起'}}</view>
+      </view>
+      <view class="list" hidden='{{hiddenName1}}'>
+        <view class="list-item">
+          <text class="request-text" space='emsp'>  量化研究需要较为系统的研究方法，首先通过对数据的现象描述，找出数据的规律，期间会用到很多数学和统计的相关工具，在了解了现象之后，再进一步的总结和推导为模型，之后通过回测进行检验，若效果和想象中的差不多，则要进一步考虑模型是否具备可外推的逻辑，否则模型会遇到过拟合的陷阱，无法在未来实际中使用。</text>
+        </view>
+        <view class="list-item">
+          <text class="request-text" space='emsp'> 步骤为：
+  现象(数据)-模型(公式)-检验(回测)-预测(外推)</text>
+        </view>
+      <view class="list-item">
+        <text class="request-text" space='emsp'>  量化分析主要分为量化选股、量化择时、算法交易、估值套利以及其它衍生品套利。目前，我们主要研究量化选股和量化择时。
+
+量化选股：
+量化选股的方法可以分为三大类：公司估值法、趋势法、资金法。其中，估值法是基于基本面研究的方法，可理解性较强。我们的格氏成长策略和银行翻倍策略本质上是一种基于基本面的量化估值策略。通过比较量化计算出的理论价格和市场价格的差异，判断企业被高估或者低估的程度，从而寻找出合适的投资标的。
+
+量化择时：
+量化择时主要是对市场的未来的涨跌进行预测，目前我们是通过10年以来的历史PB估值数据，找出市场波动的规律，并依据自己的风险偏好，进行择时空仓操作。</text>
+      </view>
+    </view>
+    <view class="list-item">
+      <text class="black">二、策略盈利来源分析</text>
+      <view class='text-gray' bindtap='clickMe2'>{{hiddenName2?'展开':'收起'}}</view>
+    </view>
+    <view class="list" hidden='{{hiddenName2}}'>
+      <view class="list-item">
+        <text class="request-text" space='emsp'>  指数基金表现超越大部分基金经理的原因：策略收益来源于公司成长和价格波动，十年以上长期来看主要来源于公司成长（营收与利润）。
+  规模大的公司通常都包括在指数里面，这些公司提供了上市公司大部分的营收、利润以及营收增长和利润增长（比如上证50、沪深300、标普500）。因此以量化的观点，主观投资通常很难打败指数策略（包括巴菲特），因为这要求主观挖掘的因子的阿尔法和显著性水平更高，这是很难的一件事。而量化指数增强可以轻松跑赢指数。</text>
+      </view>
+    </view>
+  </view>
+
+
+  
+
+<view class='cu-tabbar-height'></view>

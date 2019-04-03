@@ -1,0 +1,59 @@
+{
+
+  "pages":[
+    "pages/index/index",
+    "pages/single/single",
+    "pages/strategy/strategy",
+    "pages/about/about",
+    "pages/strategyinfo/strategyinfo",
+    "pages/detail/detail",
+    "pages/article/article",
+    "pages/suggestion/suggestion"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "开源量化",
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "white"
+  },
+  "plugins": {
+    "wxparserPlugin": {
+      "version": "0.2.1",
+      "provider": "wx9d4d4ffa781ff3ac"
+    }
+  },
+  "usingComponents": {},
+  "tabBar": {
+    "custom": true,
+    "color": "#aaa",
+    "selectedColor": "#39b54a",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "/images/tabbar/basics.png",
+        "selectedIconPath": "/images/tabbar/basics_cur.png",
+        "text": "量化策略"
+      },
+      {
+        "pagePath": "pages/single/single",
+        "iconPath": "/images/tabbar/component.png",
+        "selectedIconPath": "/images/tabbar/component_cur.png",
+        "text": "量化理论"
+      },
+      {
+        "pagePath": "pages/strategy/strategy",
+        "iconPath": "/images/tabbar/plugin.png",
+        "selectedIconPath": "/images/tabbar/plugin_cur.png",
+        "text": "热门讨论"
+      },{
+        "pagePath": "pages/about/about",
+        "iconPath": "/images/tabbar/about.png",
+        "selectedIconPath": "/images/tabbar/about_cur.png",
+        "text": "个人中心"
+      }
+    ]
+  }
+}

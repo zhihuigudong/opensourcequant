@@ -1,0 +1,21 @@
+<view class="cu-custom" style="height:{{CustomBar}}px;">
+  <view class="cu-bar fixed bg-gradual-blue" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+  <view class='content' style='top:{{StatusBar}}px;'>正文</view>
+ 
+    <navigator class='action' open-type="navigateBack" delta="1" hover-class="none">
+      <view class='icon-back padding'></view>
+    </navigator>
+  </view>
+</view>
+<view class='bg-white padding'>
+  <view class='layout_horizontal'> 
+    <view class="cu-avatar round lg" style="background-image:url({{userarticle[0].avatarurl}});"></view>
+    <view class='content flex-sub padding-xs'>
+      <view class='text-grey text'>{{userarticle[0].nickname}}</view>
+      <view class='margin-top-xs text-gray text-sm '>{{userarticle[0].date}}</view>
+    </view>
+  </view>
+<view class='text-bold text-xl text-black text-center margin-bottom'>{{userarticle[0].title}}</view>
+<view class='margin text-orange light'>作者：{{userarticle[0].nickname}}</view>
+<wxparser rich-text="{{userarticle[0].article}}" />
+</view>

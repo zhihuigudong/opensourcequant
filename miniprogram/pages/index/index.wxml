@@ -1,0 +1,32 @@
+<view class='cu-custom' style="height:{{CustomBar}}px; margin-bottom:10rpx">
+  <view class="cu-bar fixed bg-gradual-blue" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <view class='content' style='top:{{StatusBar}}px;'>开源量化</view>
+  </view>
+</view>
+<view wx:for="{{strategyList}}" wx:key>
+  <navigator hover-class='none' url="../detail/detail?id={{item.id}}" open-type="navigate" >
+    <view class='margin-sm bg-white shadow'>
+    <view class='flex align-center'>
+    <view class='padding-sm text-xl text-bold'>{{item.name}}</view>
+    <view class='flex-sub text-center text-sm'>
+      <view class='solid-bottom padding-xs'>回测区间：{{item.time}}</view>
+      <view class='padding-xs'>年化收益：{{item.income}}%</view>
+    </view>
+  </view>
+    <view class='solid-bottom flex text-center text-xs'>
+       <view class='margin-left-xs radios margin-right-xs bg-blue light flex-sub text-center ' style='border-radius: 5px'>
+        <view class='padding-top-xs'>策略收益：{{item.beforeyear}}</view>
+        <view class='padding-xs'>本年收益：{{item.thisyear}}</view>
+      </view>
+      <view class='margin-left-xs margin-right-xs bg-blue light flex-sub text-center ' style='border-radius: 5px'>
+        <view class='padding-top-xs'>基准收益：{{item.beforebase}}</view>
+        <view class='padding-xs'>策略回撤：{{item.maxdown}}</view>
+      </view>
+    </view>
+    </view>
+    
+  </navigator>
+</view>
+  
+
+<view class='cu-tabbar-height'></view>

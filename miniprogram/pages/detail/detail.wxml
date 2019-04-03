@@ -1,0 +1,122 @@
+<view class="cu-custom" style="height:{{CustomBar}}px;">
+  <view class="cu-bar fixed bg-gradual-blue" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <view class='content' style='top:{{StatusBar}}px;'>{{detailList[0].title}}</view>
+    <view wx:if="{{isshare}}" bindtap='backHome' class='text-xl'>
+      <text class='icon-home padding'></text>
+    </view>
+    <navigator wx:if="{{!isshare}}" class='action' open-type="navigateBack" delta="1" hover-class="none">
+      <view class='icon-back padding'></view>
+    </navigator>
+    
+  </view>
+</view>
+
+<scroll-view scroll-x class="bg-white nav text-center">
+<view class='flex text-center'>
+  <view class="cu-item flex-sub {{index==TabCur?'text-blue cur':''}}" wx:for="{{tabList}}" wx:key bindtap='tabSelect' data-id="{{index}}">{{item.title}}
+  </view>
+  </view>
+</scroll-view>
+  <view hidden='{{TabCur}}'>
+  <view class=' margin-xs'>
+  <view class="padding-xs radius shadow-lg bg-white text-center margin-bottom-xs">
+  <view class=' text-bold'>特别声明:</view>
+  <view class=''>持仓展示为开源策略代码运行结果</view>
+  <view class=''>仅供学习交流，不构成投资建议</view>
+  </view>
+  
+  <view class="bg-white padding-left padding-right">
+    <text class="black text-bold" style='font-size: 36rpx;'>一、策略概览</text>
+    <view class='margin-top'>回测日期：<text class='text-blue'>{{detailList[0].detailtime}}</text></view>
+    <view class='margin-top-xs layout_horizontal'>
+      <view>选股数量：<text class='text-blue'>{{detailList[0].counts}}</text></view>
+      <view >仓位配置：<text class='text-blue'>{{detailList[0].percent}}</text></view>
+    </view>
+    
+    <view class='margin-top-xs layout_horizontal'>
+      <view >策略收益：<text class='text-blue'>{{detailList[0].income}}</text></view>
+      <view >基准收益：<text class='text-blue'>{{detailList[0].baseincome}}</text></view>
+    </view>
+    <view class='margin-top-xs layout_horizontal'>
+      <view >策略年化：<text class='text-blue'>{{detailList[0].yearpercent}}</text></view>
+      <view >最大回撤：<text class='text-blue'>{{detailList[0].drawdown}}</text></view>
+    </view>
+  </view>
+  
+
+
+<view class="cu-bar bg-white">
+  <view class='action'>
+    <text class='icon-title text-blue'></text>本周持仓
+  </view>
+  <view wx:if='{{detailList[0].bool}}' class='action'>{{time}}</view>
+  <view wx:if='{{!detailList[0].bool}}' class='action'>2019-01-01</view>
+</view>
+<view class='bg-white grid col-3 padding-xs'>
+  <view class='padding-sm' wx:for="{{holdList}}" wx:key>
+    <view class='bg-gray padding-sm radius text-center shadow'>
+      <view class="text-lg text-red">{{item.name}}</view>
+      <view class='margin-top-xs text-Abc text-red'>{{item.num}}</view>
+    </view>
+  </view>
+</view>
+    <view class="list">
+    <view class="list-item solid-top">
+      <text class="black text-bold">二、回测表现</text>
+    </view>
+    <text class="request-text">同花顺MindGo平台</text>
+    <view class="list-item">
+      <image class="image1" bindtap='ImgPre' data-src='{{detailImageList[0]}}' src="{{detailImageList[0]}}" mode="scaleToFill"></image>
+    </view>
+    <text class="request-text">聚宽JoinQuant平台</text>
+    <view class="list-item">
+      <image class="image1"  bindtap='ImgPre' data-src='{{detailImageList[1]}}' src="{{detailImageList[1]}}" mode="scaleToFill"></image>
+    </view>
+    <view class="list-item">
+      <text class="request-text">{{detailList[0].description_1}}</text>
+    </view>
+    <view class="list-item">
+      <text class="request-text">{{detailList[0].description_2}}</text>
+    </view>
+    <view class="list-item solid-top">
+      <text class="black  text-bold">三、策略逻辑</text>
+    </view>
+      <wxparser rich-text="{{detailList[0].logic}}" />
+
+    
+</view>
+</view>
+</view>
+
+  <view hidden='{{!TabCur}}'>
+
+
+
+<view class="margin-top-xs cu-bar bg-white solid-bottom">
+  <view class='action'>
+    <text class='icon-title text-blue'></text>策略代码(MIndGo)
+  </view>
+  <view class='action' bindtap='CopyLink' data-link='https://github.com/zhihuigudong/strategy-code'>
+      <text class='icon-github text-gray'></text>
+      <text class='text-blue'>代码链接</text>
+    </view>
+</view>
+<view class='margin'>
+  <wxparser rich-text="{{detailList[0].code}}" />
+ </view>
+<view class="margin-top-xs cu-bar bg-white solid-bottom">
+  <view class='action'>
+    <text class='icon-title text-blue'></text>操作指南
+  </view>
+
+    
+
+</view>
+<view class="list">
+    <view class="list-item" wx:for="{{urlList}}">
+      <image class="image1" src="{{item.imagePath}}" mode="scaleToFill"></image>
+    </view>
+  </view>
+</view>
+
+
